@@ -47,3 +47,20 @@ function App() {
 }
 
 export default App
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import RecipeList from './components/RecipeList';
+import RecipeDetails from './components/RecipeDetails';
+
+const App = () => {
+  return (
+    <Router>
+      <Switch>
+        <Route exact path="/" component={RecipeList} />
+        <Route path="/recipe/:id" component={RecipeDetails} />
+      </Switch>
+    </Router>
+  );
+};
+
+export default App;
+
